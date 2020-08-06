@@ -29,11 +29,9 @@ function lightHandler(e) {
       background-size:auto,10px 10px;
     `;
     overlay.addEventListener("mousemove", lighten, true);
-    // overlay.addEventListener("wheel", updateIntensity, { passive: true });
   } else {
     overlay.style = null;
     overlay.removeEventListener("mousemove", lighten, true);
-    // overlay.removeEventListener("wheel", updateIntensity, { passive: true });
   }
 }
 
@@ -53,9 +51,8 @@ function zoom(e) {
   if (!lights) return;
   e.preventDefault();
   if (parseInt(beamX) + e.deltaY >= 100 && parseInt(beamX) + e.deltaY <= 400) {
-    console.log("mtwdsad");
     beamX = beamY = parseInt(beamX) + e.deltaY;
-    console.log(beamX);
+    intMeter.value = beamX;
     overlay.style.cssText = `
     background-image:url("./assets/flashlight.png"),
     radial-gradient(${beamX}px ${beamY}px at ${x}% ${y}%, transparent, black);
