@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gleam in the dark</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="control-section">
+        <h1>gleam in the dark</h1>
+        <div>
+          <p>torchlight</p>
+          <div class="switch">
+            <input type="checkbox" />
+            <div class="track">
+              <span>on</span>
+              <span>off</span>
+            </div>
+            <div class="switch-btn"></div>
+          </div>
+        </div>
+        <div>
+          <p>intensity</p>
+          <input
+            type="range"
+            id="intensity-meter"
+            value="100"
+            min="100"
+            max="400"
+          />
+        </div>
+      </section>
+      <section class="darkness">
+        <div class="overlay"></div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+.switch {
+  background-color: var(--switch-background-color);
+  height: calc(var(--switch-width) / 2);
+  width: var(--switch-width);
+  border-radius: var(--border);
+  position: relative;
+  margin: 0 10px;
+}
+
+.switch-btn {
+  box-sizing: border-box;
+  position: absolute;
+  transition: left 0.3s, background-color 1s;
+  background-color: #fff;
+  border: 0px solid black;
+  border-radius: 50%;
+  height: 100%;
+  width: 30px;
+  box-shadow: -1px 0 5px 0 rgba(0, 0, 0, 0.3);
+  left: 0%;
+  top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.track {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  border-radius: var(--border);
+  left: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 14px;
+}
+
+.track span:nth-child(1) {
+  color: #fff;
+}
+
+.track span:nth-child(1) + * {
+  color: hsl(140, 50%, 50%);
+}
+
+.switch input {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.switch input:checked ~ .switch-btn {
+  left: calc(100% - 30px);
+  box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.3);
+  transition: left 0.3s;
+}
+
+.switch input:checked + .track {
+  transition: background-color 1s;
+  background-color: hsl(140, 50%, 50%);
+}
